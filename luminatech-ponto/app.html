@@ -1,0 +1,69 @@
+<!--<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <title>LuminaTech - Ponto</title>
+</head>
+<body>
+ <h2 id="login" class="scroll">Login</h2>
+        <div class="container">
+            <center>
+
+                    <fieldset class="p-4 rounded shadow bg-light" id="formulario">
+                        <legend class="text-center mb-4" id="formName">Formulário de Contato</legend>
+
+                        <form class="row g-3">
+                            <div class="col-md-6">
+                                <label for="email" class="form-label" id="emailCPF">
+                                <input type="text" class="form-control" id="nome" placeholder="E-mail ou CPF"
+                                    required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="login" class="form-label" id="senha"></label>
+                                <input type="text" class="form-control" id="sobrenome"
+                                    placeholder="Digite sua senha" required>
+                            </div>
+                            <div class="text-center" id="botaoEntrar">
+                                <button type="submit" class="btn btn-primary mx-2">Entrar</button>
+                            </div>
+                </div>
+
+                </form>
+                </fieldset>
+
+        <div id="root"></div>
+    <script type="module" src="/src/app.js"></script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <title>LuminaTech - Login</title>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-form">
+            <img src="src/assets/logo_lumina.png" alt="LuminaTech Logo" class="logo">
+            <h2>Seja bem vindo! 👋</h2>
+            <form>
+                <input type="text" id="campoLogin" placeholder="E-mail ou CPF" required>
+                <input type="password" id="campoSenha" placeholder="Digite sua senha" required>
+                <a href="#" id="forgetPassword" class="forgot-password">Recuperar senha</a>
+                <button type="submit" id="btn-entrar" class="btn-primary">Entrar</button>
+                <div class="divider">Ou</div>
+                <button type="button" class="btn-google">Entre com o Google</button>
+                <button type="button" class="btn-microsoft">Entre com a Microsoft</button>
+            </form>
+            <p>Não possui uma conta? <a id="btn-cadastrar" href="#">Cadastrar-se</a></p>
+        </div>
+        <div class="login-image">
+            <img src="src/assets/art-lateral1.png" alt="Imagem de Login">
+        </div>
+    </div>
+</body>
+</html>
