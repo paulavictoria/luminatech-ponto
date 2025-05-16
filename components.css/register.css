@@ -126,7 +126,9 @@ body {
     background-color: var(--secondary-color-hover);
 }
 
-
+#btn-entrar-cadastro {
+    text-decoration: underline;
+}
 
 
 #btn-entrar {

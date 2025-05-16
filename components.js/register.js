@@ -37,7 +37,7 @@
             const confirmarSenha = document.getElementById("confirmSenha").value;
 
             if (senha !== confirmarSenha) {
-                event.preventDefault(); // Impede o envio do formulário
+                event.preventDefault(); //trava o envio do forms
                 alert("As senhas não coincidem!");
             }
         });

@@ -78,13 +78,13 @@ body {
     font-size: 0.9rem;
     text-align: right;
     margin-bottom: 1rem;
-    text-decoration: none;
+
 }
 
 #btn-cadastrar {
     color: var(--secondary-color);
     font-weight: bold;
-    text-decoration: none;
+
 }
 
 #p-conta {
@@ -157,7 +157,7 @@ body {
 #btn-google {
     background-color: var(--color-secondary);
     color: var(--text-color);
-  
+
 }
 
 #btn-google:hover {
@@ -167,7 +167,7 @@ body {
 #btn-microsoft {
     background-color: var(--color-secondary);
     color: var(--text-color);
- 
+
 }
 
 
@@ -187,11 +187,11 @@ body {
 }
 
 .form-floating input {
-    /*  height: 1rem; */
+
     padding: 1rem 0.75rem;
-    /*espaço interno*/
+
     font-size: 1rem;
-    /* border: 2px solid var(--secondary-color); */
+
     border-radius: 12px;
     background-color: var(--primary-color);
     color: var(--text-color);
@@ -227,31 +227,5 @@ body {
     color: var(--secondary-color);
     font-size: 0.75rem;
     padding: 0 0.25rem;
-    /* Garante que o texto não "corte" a borda */
+    /*garante que o texto não "corte" a borda*/
 }
-
-
-/*#btn-google {
-    background-color: var(--red-color);
-    color: var(--corBranca);
-}
-
-#btn-google:hover {
-    background-color: var(--red-color-hover);
-}
-
-#btn-microsoft {
-    background-color: var(--blue-color);
-    color: var(--corBranca);
-}
-
-#btn-microsoft:hover {
-    background-color: var(--blue-color-hover);
-}
-
-
-  --red-color: #c71c1c;
-    --red-color-hover: #ad1e1e;
-    --blue-color: #1e52a0;
-    --blue-color-hover: #1a4688;
-*/
