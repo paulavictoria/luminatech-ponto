@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gabriela Torres - Bater Ponto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/luminatech-ponto/src/assets/logo_lumina.png" type="image/x-icon">
+    <link rel="stylesheet" href="/components.css/baterPonto.css">
+</head>
+
+<body>
+    <div class="main-container container-fluid my-3">
+        <div class="header row align-items-center px-4 py-3">
+            <div class="profile col-auto d-flex align-items-center">
+                <img src="/luminatech-ponto/src/assets/woman-lumina.png" alt="Foto de perfil" class="profile-img me-3">
+                <div class="profile-info">
+                    <span class="nameUsuario">Gabriela Torres</span>
+                    <span class="roleUsuario">UX Designer</span>
+                </div>
+            </div>
+            <div id="nav-bar" class="nav col d-flex justify-content-center align-items-center">
+                <button class="nav-btn active me-2">Página Inicial</button>
+                <button class="nav-btn me-2">Meu Histórico</button>
+                <button class="nav-btn me-2">Dados Pessoais</button>
+                <button class="nav-btn me-2">Justificativas</button>
+                <span class="notif ms-2">
+                    <svg width="30" height="30" viewBox="0 0 24 24">
+                        <path
+                            d="M12 24c1.104 0 2-.896 2-2h-4c0 1.104.896 2 2 2zm6.364-6v-5c0-3.07-1.639-5.64-4.364-6.32V6c0-.828-.672-1.5-1.5-1.5s-1.5.672-1.5 1.5v.68C7.275 7.36 5.636 9.93 5.636 13v5l-1.636 1.5V21h16v-1.5l-1.636-1.5zM18 19H6v-6c0-2.757 2.243-5 5-5s5 2.243 5 5v6z" />
+                    </svg> <!--ícone de not-->
+                    <span class="notif-dot"></span>
+                </span>
+            </div>
+        </div>
+        <div class="content row justify-content-center">
+            <div class="col-12 text-center greeting mt-4">
+                <h2 id="saudacao">Bom dia, Gabriela!</h2>
+                <p id="saudacaoDia">Pronta para começar bem o dia? Marque seu ponto!</p>
+            </div>
+            <div class="col-12 d-flex flex-column align-items-center clock-container">
+                <div class="clock-circle mb-3">
+                    <div class="clock-time" id="clock-time">09:30</div>
+                    <div class="clock-label" id="clock-label">Iniciar Jornada</div>
+                    <button class="clock-btn" id="clock-btn" title="Iniciar jornada">
+                        <svg viewBox="0 0 48 48">
+                            <circle cx="24" cy="24" r="22" fill="none" />
+                            <polygon points="18,14 36,24 18,34" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="bottom-section row mt-5 px-4">
+                <div class="day-track col-md-5 mb-4 mb-md-0">
+                    <h3 id="day-know">Acompanhe seu dia</h3>
+                    <ul class="track-list" id="track-list">
+                        <li class="track-item">
+                            <span class="track-icon"><svg width="18" height="18" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10" fill="#e1baff" />
+                                    <path d="M12 7v5l4 2" stroke="#6B1294" stroke-width="2" fill="none"
+                                        stroke-linecap="round" />
+                                </svg></span>
+                            <div class="track-info">
+                                <span class="track-time">09:30</span>
+                                <span class="track-label">Chegada</span>
+                            </div>
+                        </li>
+                        <li class="track-item">
+                            <span class="track-icon"><svg width="18" height="18" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10" fill="#e1baff" />
+                                    <path d="M8 12h8" stroke="#6B1294" stroke-width="2" fill="none"
+                                        stroke-linecap="round" />
+                                </svg></span>
+                            <div class="track-info">
+                                <span class="track-time">12:30</span>
+                                <span class="track-label">Almoço</span>
+                            </div>
+                        </li>
+                        <li class="track-item">
+                            <span class="track-icon"><svg width="18" height="18" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10" fill="#e1baff" />
+                                    <path d="M12 7v5l4 2" stroke="#6B1294" stroke-width="2" fill="none"
+                                        stroke-linecap="round" />
+                                </svg></span>
+                            <div class="track-info">
+                                <span class="track-time">18:30</span>
+                                <span class="track-label">Saída</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="week-summary col-md-7">
+                    <h3>Resumo da semana</h3>
+                    <div class="summary-cards d-flex">
+                        <div class="summary-card me-3">
+                            <div class="summary-title">Total de horas</div>
+                            <div class="summary-value" id="total-horas">40</div>
+                            <div class="summary-extra">+2 Horas</div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-title">Horas a pagar</div>
+                            <div class="summary-value" id="horas-pagar">5</div>
+                            <div class="summary-extra negative">-3 Horas</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap JS (opcional, para componentes interativos) -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            // Atualiza o relógio em tempo real
+            function updateClock() {
+                const now = new Date();
+                const hh = String(now.getHours()).padStart(2, '0');
+                const mm = String(now.getMinutes()).padStart(2, '0');
+                document.getElementById('clock-time').textContent = `${hh}:${mm}`;
+            }
+            setInterval(updateClock, 1000);
+            updateClock();
+
+            // Simula o botão de iniciar jornada
+            const clockBtn = document.getElementById('clock-btn');
+            const clockLabel = document.getElementById('clock-label');
+            let jornadaIniciada = false;
+
+            clockBtn.addEventListener('click', function () {
+                jornadaIniciada = !jornadaIniciada;
+                if (jornadaIniciada) {
+                    clockLabel.textContent = 'Jornada Iniciada!';
+                    clockBtn.title = 'Finalizar Jornada';
+                } else {
+                    clockLabel.textContent = 'Iniciar Jornada';
+                    clockBtn.title = 'Iniciar Jornada';
+                }
+            });
+        </script>
+</body>
+
+</html>
