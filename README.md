@@ -17,4 +17,4 @@ Frontend: HTML, CSS, JavaScript (React)
 
 Autenticação: JWT (JSON Web Tokens)
 
-
+Equipe composta por: Allan Harrison, Marcela Negrão, Paula Victoria, Phelipe Oliveira, Pedro Henrique, Sophia Santos e Wslany Amorim. 
