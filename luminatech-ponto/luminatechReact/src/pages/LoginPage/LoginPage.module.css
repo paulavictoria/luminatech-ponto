@@ -1,0 +1,196 @@
+/* src/pages/LoginPage/LoginPage.module.css */
+
+/* Variáveis (podem ser movidas para um arquivo global de estilos depois) */
+:root {
+    --primary-color: #EBE7E7;
+    --secondary-color: #6B1294;
+    --color-secondary: #cf8ceea9;
+    --secondary-color-hover: #611186;
+    --text-color: #0F0F0F;
+    --stroker: #a0a0a0;
+    --hover-roxo: #e09eff96;
+    --corBranca: #FFFFFF;
+}
+
+/* Estilos gerais, se houver. O body geralmente é estilizado em index.css ou global.css */
+/* Por enquanto, vou manter aqui para a LoginPage, mas idealmente seria global */
+.body { /* Usei .body aqui para evitar conflito direto com a tag body global, mas você pode remover este se definir um global body style */
+    background-color: var(--primary-color);
+    color: var(--primary-color); /* Note: this might make text invisible if not intended for primary-color text */
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+
+/* Estilos específicos do componente LoginPage */
+.loginContainer { /* Novo nome para a div container-fluid */
+    /* Estilos para o container principal, se necessário */
+    background-color: var(--primary-color); /* Adicionado aqui para garantir o fundo */
+}
+
+.containerLeft {
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.containerRight {
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 1rem 0;
+    /* Adiciona margem interna no topo e no bottom */
+}
+
+.logo {
+    max-width: 400px;
+}
+
+.divider {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+/* Nota: A classe .login-image do HTML foi substituída por .containerRight na div externa
+   e a imagem dentro dela tem uma classe específica se precisar de estilos próprios.
+   A classe 'img-fluid' do Bootstrap já cuida da responsividade básica. */
+.loginImage img { /* Se você quiser manter um estilo específico para a imagem interna */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translateX(-10%);
+}
+
+
+.welcome {
+    color: var(--text-color);
+    font-size: 1.3rem;
+    margin-top: -1rem;
+    margin-left: 2rem;
+    /*ref logo lumina*/
+    margin-bottom: 2rem;
+    /* ref campo de login*/
+}
+
+.forgetPassword { /* Alterado para .forgetPassword para ser consistente com CSS Modules */
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+.btnCadastrar { /* Alterado para .btnCadastrar */
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.pConta { /* Alterado para .pConta */
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+/* Estilos dos campos de input dentro de .form-floating */
+/* O .form-control já é do Bootstrap, aqui estamos adicionando overrides */
+.formControl { /* Nova classe para os inputs específicos de login */
+    border-radius: 12px;
+    background-color: var(--primary-color);
+    border: 2px solid var(--secondary-color);
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+/* O Bootstrap já tem .form-floating, mas precisamos estilizar o label */
+.formFloating label {
+    position: absolute;
+    top: 0.8rem;
+    left: 0.75rem;
+    padding: 0 0.25rem;
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: all 0.2s ease-in-out;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Estilo para label quando input está focado ou preenchido */
+.formFloating input:focus + label,
+.formFloating input:not(:placeholder-shown) + label {
+    top: -0.6rem;
+    left: 0.75rem;
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+    padding: 0 0.25rem;
+}
+
+.formFloating input:focus { /* Adicionado para garantir o foco na borda */
+    border-color: var(--secondary-color);
+    outline: none;
+}
+
+
+.btnEntrar { /* Alterado para .btnEntrar */
+    display: flex;
+    width: 400px;
+    height: 55px;
+    padding: 14px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.btnEntrar:hover {
+    background-color: var(--secondary-color-hover);
+}
+
+.btnGoogle,
+.btnMicrosoft { /* Alterado para .btnGoogle e .btnMicrosoft */
+    display: flex;
+    width: 400px;
+    height: 55px;
+    padding: 14px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.btnGoogle {
+    background-color: var(--color-secondary);
+    color: var(--text-color);
+}
+
+.btnGoogle:hover {
+    background-color: var(--hover-roxo);
+}
+
+.btnMicrosoft {
+    background-color: var(--color-secondary);
+    color: var(--text-color);
+}
+
+.btnMicrosoft:hover {
+    background-color: var(--hover-roxo);
+}
+
+.btnLogo { /* Alterado para .btnLogo */
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
