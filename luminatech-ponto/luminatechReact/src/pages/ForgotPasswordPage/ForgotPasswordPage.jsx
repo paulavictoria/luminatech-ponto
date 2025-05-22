@@ -112,7 +112,7 @@ function ForgotPasswordPage() {
         {/* Removido bg-light para que o fundo seja controlado pelo CSS Module */}
         <div className="col-md-6 d-flex justify-content-center align-items-center">
           <div id="container-right" className={`login-image ${styles.containerRight}`}>
-            <img src={artLateral2} alt="Imagem de Recuperação de Senha" className={`img-fluid ${styles.loginImage}`} />
+            <img src={artLateral2} alt="Imagem de Recuperação de Senha" className={`${styles.loginImage}`} />
           </div>
         </div>
       </div>
