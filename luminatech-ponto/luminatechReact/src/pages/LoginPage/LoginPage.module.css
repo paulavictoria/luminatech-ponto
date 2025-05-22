@@ -1,73 +1,49 @@
 /* src/pages/LoginPage/LoginPage.module.css */
 
-/* --- Variáveis (Mantenha aqui por enquanto, já que não estamos usando o global.css) --- */
 :root {
     --primary-color: #EBE7E7;
     --secondary-color: #6B1294;
-    /* Roxo principal, para botões e links */
     --color-secondary: #cf8ceea9;
-    /* Roxo mais claro, para o botão "Voltar" */
-    --secondary-color-hover: #701799f3;
-    /* Hover do roxo principal */
+    --secondary-color-hover: #9b3bc7f3;
     --text-color: #0F0F0F;
-    /* Cor do texto */
     --stroker: #a0a0a0;
     --btn-google: rgb(160, 38, 38);
     --btn-microsoft: rgb(62, 103, 238);
-    --btn-google-hover: rgba(175, 46, 46, 0.87);
-    --btn-microsoft-hover:  rgba(73, 112, 238, 0.897);
-    /* Cor da linha do divisor e bordas de input */
+    --btn-google-hover: rgba(175, 46, 46, 0.904);
+    --btn-microsoft-hover: rgba(73, 112, 238, 0.925);
     --hover-roxo: #e09eff96;
-    /* Hover de botões secundários */
     --corBranca: #FFFFFF;
     --background-soft-purple: #f3e9fa;
-    /* Fundo geral da página/layout de duas colunas */
     --form-bg-color: #ffffff;
-    /* Fundo do formulário de login */
-
-    /* Variáveis para consistência de elementos de formulário */
     --border-radius-sm: 8px;
     --padding-input: 0.9rem 0.75rem;
 }
 
-/* --- Estilos específicos da LoginPage (já existentes ou ajustados) --- */
-
-/* Exemplo de outros estilos específicos da LoginPage que você já deve ter */
 .loginContainer {
-     background-color: var(--background-soft-purple);
+    background-color: var(--background-soft-purple);
     width: 100vw;
-    /* Ocupa 100% da largura da tela */
     height: 100vh;
-    /* Ocupa 100% da altura da tela */
     margin: 0;
     padding: 0;
-    /* Removido o padding aqui para o .rowLayout controlar o espaçamento */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .rowLayout {
-    /* Nova classe para o div.row para controlar o layout interno */
     display: flex;
     flex-grow: 1;
     width: calc(100% - 40px);
-    /* Ajuste a largura considerando um padding total de 40px (20px de cada lado) */
     max-width: 1200px;
-    /* Limite opcional para telas maiores */
     height: calc(100vh - 40px);
-    /* Ajuste a altura considerando o padding do container principal */
     border-radius: 15px;
     overflow: hidden;
-    /* Importante para as bordas arredondadas internas */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     background-color: var(--form-bg-color);
-    /* Fundo para as colunas combinadas */
 }
 
 
 .containerLeft {
-    /* A classe do container esquerdo do formulário */
     background-color: var(--form-bg-color);
     width: 100%;
     height: 100%;
@@ -82,15 +58,12 @@
     border-bottom-left-radius: 15px;
 }
 
+
 .logo {
     max-width: 280px;
     margin-bottom: 3rem;
 }
 
-/* --- Estilos para os Inputs Form Floating (Foco principal) --- */
-
-/* Para garantir a sobreposição, usamos seletores mais específicos e !important */
-/* Alvo: O input com classe form-control dentro de um form-floating */
 .loginContainer .containerLeft .form-floating .form-control {
     border-radius: var(--border-radius-sm);
     background-color: transparent;
@@ -131,9 +104,6 @@
     background-color: var(--form-bg-color);
 }
 
-
-/* --- Outros estilos específicos da LoginPage (já existentes ou ajustados) --- */
-
 .welcome {
     color: var(--text-color);
     font-size: 1.4rem;
@@ -143,7 +113,6 @@
 }
 
 .forgetPassword {
-    /* Ou a classe styles.forgetPassword se você tiver renomeado */
     color: var(--secondary-color);
     font-weight: bold;
     font-size: 0.9rem;
@@ -151,16 +120,13 @@
     margin-bottom: 1rem;
     text-decoration: none;
     display: block;
-    /* Para o margin-bottom funcionar */
 }
 
 .forgetPassword:hover {
     text-decoration: underline !important;
 }
 
-/* Estilos para os botões e outros elementos da página de Login */
 .btnEntrar {
-    /* O botão "Entrar" */
     border-radius: var(--border-radius-sm) !important;
     background-color: var(--secondary-color) !important;
     color: var(--corBranca) !important;
@@ -221,7 +187,7 @@
 }
 
 .btnGoogle:hover {
-    background-color: var(--btn-google-hover)!important;
+    background-color: var(--btn-google-hover) !important;
 }
 
 .btnMicrosoft {
@@ -262,4 +228,3 @@
     font-size: 0.8rem;
     margin-top: 2rem;
 }
-

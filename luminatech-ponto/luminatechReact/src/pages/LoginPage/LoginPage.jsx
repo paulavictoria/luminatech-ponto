@@ -99,4 +99,3 @@ function LoginPage() {
 }
 
 export default LoginPage;
-//img-fluid 

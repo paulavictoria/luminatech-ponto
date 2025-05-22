@@ -1,25 +1,23 @@
 /* src/pages/RegisterPage/RegisterPage.module.css */
 
-/* --- Variáveis (Mantenha igual ao LoginPage e adicione para o aumento dos inputs) --- */
+
 :root {
     --primary-color: #EBE7E7;
-    --secondary-color: #6B1294; /* Roxo principal, para botões e links */
-    --color-secondary: #cf8ceea9; /* Roxo mais claro, para o botão "Voltar" */
-    --secondary-color-hover: #611186; /* Hover do roxo principal */
-    --text-color: #0F0F0F; /* Cor do texto */
-    --stroker: #a0a0a0; /* Cor da linha do divisor e bordas de input */
-    --hover-roxo: #e09eff96; /* Hover de botões secundários */
+    --secondary-color: #6B1294;
+    --color-secondary: #cf8ceea9;
+    --secondary-color-hover: #9b3bc7f3;
+    --text-color: #0F0F0F;
+    --stroker: #a0a0a0;
+    --hover-roxo: #e09eff96;
     --corBranca: #FFFFFF;
-    --background-soft-purple: #f3e9fa; /* Fundo geral da página/layout de duas colunas */
-    --form-bg-color: #ffffff; /* Fundo do formulário de login */
-
-    /* Variáveis para consistência de elementos de formulário */
+    --background-soft-purple: #f3e9fa;
+    --form-bg-color: #ffffff;
     --border-radius-sm: 8px;
-    /* Novas variáveis para inputs e botões maiores */
     --padding-input-lg: 1.2rem 1rem;
     --font-size-input-lg: 1.1rem;
     --font-size-btn-lg: 1.2rem;
-    --form-max-width: 450px; /* <--- AUMENTEI AQUI PARA 450px, que é o que a imagem de referência parece ter. Você pode ajustar. */
+    --form-max-width: 450px;
+    /* <--- AUMENTEI AQUI PARA 450px, que é o que a imagem de referência parece ter. Você pode ajustar. */
 }
 
 body {
@@ -32,30 +30,30 @@ body {
 
 .registerContainer {
     background-color: var(--background-soft-purple);
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    margin: 1rem auto;
-    max-width: 1200px;
-    min-height: 90vh;
-
     width: 100vw;
     height: 100vh;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.row { /* Usei .row diretamente, já que é a classe do Bootstrap no seu JSX */
+.rowLayout {
     display: flex;
     flex-grow: 1;
-    width: 100%;
-    height: 100%;
+    width: calc(100% - 40px);
+    max-width: 1200px;
+    height: calc(100vh - 40px);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     background-color: var(--form-bg-color);
 }
 
 /* col-md-7 e col-md-5 são as novas classes no JSX */
-.col-md-7, .col-md-5 {
+.col-md-7,
+.col-md-5 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,7 +63,7 @@ body {
 
 .containerLeft {
     background-color: var(--form-bg-color);
-    width: 100%; /* Ocupa 100% da largura do col-md-7 pai */
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -76,7 +74,6 @@ body {
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     box-sizing: border-box;
-    /* Removi os max-width e min-width daqui para que o col-md-7 defina a largura da coluna */
 }
 
 .containerRight {
@@ -105,17 +102,16 @@ body {
 }
 
 .loginImage {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
 
 .form-floating {
     width: 100%;
-    max-width: var(--form-max-width); /* Este é o principal controlador da largura dos inputs e botões */
+    max-width: var(--form-max-width);
+    /* Este é o principal controlador da largura dos inputs e botões */
     margin-bottom: 1.5rem;
 }
 
@@ -151,8 +147,8 @@ body {
     background-color: transparent !important;
 }
 
-.containerLeft .form-floating input:focus + label,
-.containerLeft .form-floating input:not(:placeholder-shown) + label {
+.containerLeft .form-floating input:focus+label,
+.containerLeft .form-floating input:not(:placeholder-shown)+label {
     top: -0.6rem !important;
     left: 0.75rem !important;
     font-size: 0.9rem !important;
@@ -175,6 +171,7 @@ body {
     margin-top: 1.5rem !important;
     margin-bottom: 1.5rem !important;
 }
+
 .btnCadastrar:hover {
     background-color: var(--secondary-color-hover) !important;
 }
@@ -189,6 +186,7 @@ body {
     width: 100%;
     max-width: var(--form-max-width);
 }
+
 .divider::before,
 .divider::after {
     content: '';
@@ -198,8 +196,14 @@ body {
     height: 1px;
     background-color: var(--stroker);
 }
-.divider::before { left: 0; }
-.divider::after { right: 0; }
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
 
 .pConta {
     color: var(--text-color);
@@ -211,11 +215,13 @@ body {
     width: 100%;
     max-width: var(--form-max-width);
 }
+
 .btnEntrarCadastro {
     color: var(--secondary-color) !important;
     font-weight: bold !important;
     text-decoration: none !important;
 }
+
 .btnEntrarCadastro:hover {
     text-decoration: underline !important;
 }
@@ -235,12 +241,9 @@ body {
 }
 
 .copyright {
-    color: var(--text-color);
+  color: var(--text-color);
     font-size: 0.8rem;
-    margin-top: 2rem !important;
-    text-align: center;
-    width: 100%;
-    max-width: var(--form-max-width);
+    margin-top: 2rem;
 }
 
 /* --- Media Queries para Responsividade --- */
@@ -254,7 +257,9 @@ body {
         margin: 10px auto;
     }
 
-    .col-md-7, .col-md-5 { /* Garante que em mobile, as colunas ocupem 100% */
+    .col-md-7,
+    .col-md-5 {
+        /* Garante que em mobile, as colunas ocupem 100% */
         width: 100% !important;
         flex: 0 0 100% !important;
         max-width: 100% !important;
@@ -286,7 +291,7 @@ body {
         margin-bottom: 1rem;
         max-width: 100%;
     }
-    
+
     .containerLeft .form-floating .form-control {
         font-size: 1rem !important;
         padding: 1rem 0.75rem !important;
@@ -298,8 +303,8 @@ body {
         left: 0.75rem !important;
     }
 
-    .containerLeft .form-floating input:focus + label,
-    .containerLeft .form-floating input:not(:placeholder-shown) + label {
+    .containerLeft .form-floating input:focus+label,
+    .containerLeft .form-floating input:not(:placeholder-shown)+label {
         font-size: 0.8rem !important;
     }
 
@@ -312,11 +317,15 @@ body {
     .divider {
         max-width: 100%;
     }
-    .divider::before, .divider::after {
+
+    .divider::before,
+    .divider::after {
         width: 30%;
     }
 
-    .pConta, .copyright, .errorMessage {
+    .pConta,
+    .copyright,
+    .errorMessage {
         max-width: 100%;
     }
 }
@@ -330,7 +339,8 @@ body {
         margin: 0;
     }
 
-    .containerLeft, .containerRight {
+    .containerLeft,
+    .containerRight {
         border-radius: 0;
     }
 

@@ -35,7 +35,7 @@ function RegisterPage() {
 
   return (
     <div className={`container-fluid ${styles.registerContainer}`}>
-      <div className="row flex-grow-1 w-100 g-0">
+      <div className={`row flex-grow-1 w-100 g-0 ${styles.rowLayout}`}>
         {/* Coluna da Esquerda (Formulário) */}
         {/* Manter col-md-6 conforme o seu JSX original. As correções de largura serão feitas no CSS. */}
         <div className="col-md-6 d-flex justify-content-center align-items-center">
@@ -113,7 +113,7 @@ function RegisterPage() {
         {/* Coluna da Direita (Imagem) */}
         <div className="col-md-6 d-flex justify-content-center align-items-center">
           <div id="container-right" className={`login-image ${styles.containerRight}`}>
-            <img src={artLateral3} alt="Imagem Lateral de Cadastro" className={`img-fluid ${styles.loginImage}`} />
+            <img src={artLateral3} alt="Imagem Lateral de Cadastro" className={`${styles.loginImage}`} />
           </div>
         </div>
       </div>
