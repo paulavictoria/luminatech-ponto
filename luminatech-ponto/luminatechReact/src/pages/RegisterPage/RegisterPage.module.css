@@ -1,0 +1,344 @@
+/* src/pages/RegisterPage/RegisterPage.module.css */
+
+/* --- Variáveis (Mantenha igual ao LoginPage e adicione para o aumento dos inputs) --- */
+:root {
+    --primary-color: #EBE7E7;
+    --secondary-color: #6B1294; /* Roxo principal, para botões e links */
+    --color-secondary: #cf8ceea9; /* Roxo mais claro, para o botão "Voltar" */
+    --secondary-color-hover: #611186; /* Hover do roxo principal */
+    --text-color: #0F0F0F; /* Cor do texto */
+    --stroker: #a0a0a0; /* Cor da linha do divisor e bordas de input */
+    --hover-roxo: #e09eff96; /* Hover de botões secundários */
+    --corBranca: #FFFFFF;
+    --background-soft-purple: #f3e9fa; /* Fundo geral da página/layout de duas colunas */
+    --form-bg-color: #ffffff; /* Fundo do formulário de login */
+
+    /* Variáveis para consistência de elementos de formulário */
+    --border-radius-sm: 8px;
+    /* Novas variáveis para inputs e botões maiores */
+    --padding-input-lg: 1.2rem 1rem;
+    --font-size-input-lg: 1.1rem;
+    --font-size-btn-lg: 1.2rem;
+    --form-max-width: 450px; /* <--- AUMENTEI AQUI PARA 450px, que é o que a imagem de referência parece ter. Você pode ajustar. */
+}
+
+body {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+.registerContainer {
+    background-color: var(--background-soft-purple);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    margin: 1rem auto;
+    max-width: 1200px;
+    min-height: 90vh;
+
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row { /* Usei .row diretamente, já que é a classe do Bootstrap no seu JSX */
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    background-color: var(--form-bg-color);
+}
+
+/* col-md-7 e col-md-5 são as novas classes no JSX */
+.col-md-7, .col-md-5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent !important;
+    padding: 0 !important;
+}
+
+.containerLeft {
+    background-color: var(--form-bg-color);
+    width: 100%; /* Ocupa 100% da largura do col-md-7 pai */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    padding: 2rem;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    box-sizing: border-box;
+    /* Removi os max-width e min-width daqui para que o col-md-7 defina a largura da coluna */
+}
+
+.containerRight {
+    background-color: var(--background-soft-purple);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.logo {
+    max-width: 280px;
+    margin-bottom: 3rem;
+}
+
+.create {
+    color: var(--text-color);
+    font-size: 1.8rem;
+    margin-top: -1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.loginImage {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.form-floating {
+    width: 100%;
+    max-width: var(--form-max-width); /* Este é o principal controlador da largura dos inputs e botões */
+    margin-bottom: 1.5rem;
+}
+
+.containerLeft .form-floating .form-control {
+    border-radius: var(--border-radius-sm) !important;
+    background-color: transparent !important;
+    border: 1px solid var(--stroker) !important;
+    padding: var(--padding-input-lg) !important;
+    font-size: var(--font-size-input-lg) !important;
+    color: var(--text-color) !important;
+    height: auto !important;
+    line-height: normal !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.containerLeft .form-floating .form-control:focus {
+    border-color: var(--secondary-color) !important;
+    box-shadow: 0 0 0 0.25rem rgba(107, 18, 148, 0.25) !important;
+    outline: none !important;
+}
+
+.containerLeft .form-floating label {
+    color: var(--stroker) !important;
+    position: absolute !important;
+    top: 1rem !important;
+    left: 1rem !important;
+    padding: 0 0.25rem !important;
+    font-size: var(--font-size-input-lg) !important;
+    transition: all 0.2s ease-in-out !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+    background-color: transparent !important;
+}
+
+.containerLeft .form-floating input:focus + label,
+.containerLeft .form-floating input:not(:placeholder-shown) + label {
+    top: -0.6rem !important;
+    left: 0.75rem !important;
+    font-size: 0.9rem !important;
+    color: var(--secondary-color) !important;
+    padding: 0 0.25rem !important;
+    background-color: var(--form-bg-color) !important;
+}
+
+.btnCadastrar {
+    border-radius: var(--border-radius-sm) !important;
+    background-color: var(--secondary-color) !important;
+    color: var(--corBranca) !important;
+    padding: 14px !important;
+    width: 100% !important;
+    max-width: var(--form-max-width) !important;
+    font-size: var(--font-size-btn-lg) !important;
+    font-weight: 500 !important;
+    border: none !important;
+    cursor: pointer !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+.btnCadastrar:hover {
+    background-color: var(--secondary-color-hover) !important;
+}
+
+.divider {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    font-weight: bold;
+    position: relative;
+    margin: 1.5rem 0 !important;
+    width: 100%;
+    max-width: var(--form-max-width);
+}
+.divider::before,
+.divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 35%;
+    height: 1px;
+    background-color: var(--stroker);
+}
+.divider::before { left: 0; }
+.divider::after { right: 0; }
+
+.pConta {
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-top: 1rem !important;
+    margin-bottom: 2rem !important;
+    text-align: center;
+    width: 100%;
+    max-width: var(--form-max-width);
+}
+.btnEntrarCadastro {
+    color: var(--secondary-color) !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+}
+.btnEntrarCadastro:hover {
+    text-decoration: underline !important;
+}
+
+.errorMessage {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+    width: 100%;
+    max-width: var(--form-max-width);
+    text-align: left;
+}
+
+.copyright {
+    color: var(--text-color);
+    font-size: 0.8rem;
+    margin-top: 2rem !important;
+    text-align: center;
+    width: 100%;
+    max-width: var(--form-max-width);
+}
+
+/* --- Media Queries para Responsividade --- */
+@media (max-width: 992px) {
+    .registerContainer {
+        flex-direction: column;
+        height: auto;
+        min-height: auto;
+        width: calc(100% - 20px);
+        max-width: 500px;
+        margin: 10px auto;
+    }
+
+    .col-md-7, .col-md-5 { /* Garante que em mobile, as colunas ocupem 100% */
+        width: 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+    .containerLeft {
+        padding: 2rem;
+        border-radius: 15px 15px 0 0;
+        order: 2;
+        max-width: 100%;
+    }
+
+    .containerRight {
+        height: 250px;
+        border-radius: 0 0 15px 15px;
+        order: 1;
+    }
+
+    .logo {
+        max-width: 180px;
+        margin-bottom: 1.5rem;
+    }
+
+    .create {
+        font-size: 1.5rem;
+    }
+
+    .form-floating {
+        margin-bottom: 1rem;
+        max-width: 100%;
+    }
+    
+    .containerLeft .form-floating .form-control {
+        font-size: 1rem !important;
+        padding: 1rem 0.75rem !important;
+    }
+
+    .containerLeft .form-floating label {
+        font-size: 1rem !important;
+        top: 0.8rem !important;
+        left: 0.75rem !important;
+    }
+
+    .containerLeft .form-floating input:focus + label,
+    .containerLeft .form-floating input:not(:placeholder-shown) + label {
+        font-size: 0.8rem !important;
+    }
+
+    .btnCadastrar {
+        padding: 10px;
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .divider {
+        max-width: 100%;
+    }
+    .divider::before, .divider::after {
+        width: 30%;
+    }
+
+    .pConta, .copyright, .errorMessage {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .registerContainer {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+        margin: 0;
+    }
+
+    .containerLeft, .containerRight {
+        border-radius: 0;
+    }
+
+    .containerLeft {
+        padding: 1.5rem;
+    }
+
+    .containerRight {
+        height: 200px;
+    }
+}

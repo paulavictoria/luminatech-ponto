@@ -27,10 +27,10 @@ function LoginPage() {
   };
 
   return (
-    <div className={`container-fluid vh-100 d-flex ${styles.loginContainer}`}>
+    <div className={`container-fluid ${styles.loginContainer}`}>
       <div className="row flex-grow-1 w-100 g-0">
         {/* Coluna da Esquerda (Formulário) */}
-        <div className="col-md-6 d-flex justify-content-center align-items-center bg-light">
+        <div className="col-md-6 d-flex justify-content-center align-items-center">
           <div id="container-left" className={`login-form text-center ${styles.containerLeft}`}>
             <img src={logoLumina} alt="LuminaTech Logo" className={`logo mb-4 ${styles.logo}`} />
             <h2 className={`welcome ${styles.welcome}`}>Seja Bem-Vindo(a)! 👋</h2>
@@ -87,7 +87,7 @@ function LoginPage() {
           </div>
         </div>
         {/* Coluna da Direita (Imagem) */}
-        <div className="col-md-6 d-flex justify-content-center align-items-center bg-light">
+        <div className="col-md-6 d-flex justify-content-center align-items-center">
           <div id="container-right" className={`login-image ${styles.containerRight}`}>
             <img src={artLateral1} alt="Imagem de Login" className={`img-fluid ${styles.loginImage}`} />
           </div>
