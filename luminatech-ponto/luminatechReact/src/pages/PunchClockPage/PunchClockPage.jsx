@@ -1,90 +1,91 @@
 // src/pages/PunchClockPage/PunchClockPage.jsx
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import styles from './PunchClockPage.module.css';
 
-// Importe os componentes que criaremos
-import Header from '../../components/Header/Header';
+// Importe os componentes que criaremos (ou que já foram criados)
 import ClockSection from '../../components/ClockSection/ClockSection';
 import DayTrack from '../../components/DayTrack/DayTrack';
 import WeekSummary from '../../components/WeekSummary/WeekSummary';
 import ModalPonto from '../../components/ModalPonto/ModalPonto';
 
+// Importe as imagens locais para a linha separadora (se for SVG em arquivo)
+// Se for um SVG inline, não precisa importar. O SVG que você usou é inline, então não precisa aqui.
+
 function PunchClockPage() {
-  const [showModal, setShowModal] = useState(false);
-  const [jornadaIniciada, setJornadaIniciada] = useState(true);
+    const [showModal, setShowModal] = useState(false);
+    // Assumindo que a jornada pode começar ou não. Ajuste o valor inicial conforme a lógica do seu app.
+    const [jornadaIniciada, setJornadaIniciada] = useState(false);
 
-  const handlePunch = useCallback(() => {
-    setJornadaIniciada(prev => !prev);
-    setShowModal(true);
-    setTimeout(() => {
-      setShowModal(false);
-    }, 4000);
-  }, []);
+    const handlePunch = useCallback(() => {
+        setJornadaIniciada(prev => !prev);
+        setShowModal(true);
+        // Oculta o modal após 4 segundos
+        setTimeout(() => {
+            setShowModal(false);
+        }, 4000);
+    }, []);
 
-  const userData = {
-    name: 'Gabriela Torres',
-    role: 'UX Designer',
-    profileImg: '/images/gabi.png', // Certifique-se de que o caminho está correto
-  };
+    // Dados fake para DayTrack
+    const trackItems = [
+        { time: '09:30', label: 'Chegada', type: 'start' },
+        { time: '12:30', label: 'Almoço', type: 'pause' },
+        { time: '18:30', label: 'Saída', type: 'end' },
+    ];
 
-  const trackItems = [
-    { time: '09:30', label: 'Chegada', type: 'start' },
-    { time: '12:30', label: 'Almoço', type: 'pause' },
-    { time: '18:30', label: 'Saída', type: 'end' },
-  ];
+    // Dados fake para WeekSummary
+    const summaryData = {
+        totalHours: 40,
+        totalHoursExtra: 2,
+        hoursToPay: 5,
+        hoursToPayNegative: 3,
+    };
 
-  const summaryData = {
-    totalHours: 40,
-    totalHoursExtra: 2,
-    hoursToPay: 5,
-    hoursToPayNegative: 3,
-  };
+    const getGreeting = () => {
+        const hour = new Date().getHours();
+        if (hour < 12) return 'Bom dia';
+        if (hour < 18) return 'Boa tarde';
+        return 'Boa noite';
+    };
 
-  const getGreeting = () => {
-    const hour = new Date().getHours();
-    if (hour < 12) return 'Bom dia';
-    if (hour < 18) return 'Boa tarde';
-    return 'Boa noite';
-  };
+    // Dados do usuário para a saudação dentro da página
+    const localUserData = {
+        name: 'Gabriela Torres',
+        role: 'UX Designer',
+    };
 
-  return (
-    // Remova as classes Bootstrap como 'container-fluid my-3' daqui!
-    // Use APENAS a classe do CSS Module para o container principal.
-    <div className={styles.mainContainer}>
-      <Header userData={userData} />
+    return (
+        <div className={styles.mainContainer}>
+            <div className={styles.content}> {/* Aplica o estilo .content para centralizar e adicionar padding */}
+                <div className={styles.greeting}>
+                    <h2 id="saudacao">{getGreeting()}, {localUserData.name.split(' ')[0]}!</h2>
+                    <p id="saudacaoDia">Pronta para começar bem o dia? Marque seu ponto!</p>
+                </div>
 
-      {/* Continue usando as classes 'row' e 'col' do Bootstrap para layout interno, se quiser */}
-      <div className={`${styles.content} row justify-content-center`}>
-        <div className={`${styles.greeting} col-12 text-center mt-4`}>
-          <h2 id="saudacao">{getGreeting()}, {userData.name.split(' ')[0]}!</h2>
-          <p id="saudacaoDia">Pronta para começar bem o dia? Marque seu ponto!</p>
+                <div className={styles.clockContainer}>
+                    <ClockSection onPunch={handlePunch} jornadaIniciada={jornadaIniciada} />
+                </div>
+
+                <div className={styles.linhaSeparadora}>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1175"
+                        height="2"
+                        viewBox="0 0 1175 2"
+                        fill="none"
+                    >
+                        <path d="M0 1H1174.5" stroke="#BCBABA" strokeWidth="1" />
+                    </svg>
+                </div>
+
+                <div className={styles.bottomSection}>
+                    <DayTrack trackItems={trackItems} />
+                    <WeekSummary summaryData={summaryData} />
+                </div>
+            </div>
+
+            <ModalPonto show={showModal} />
         </div>
-
-        <div className={`${styles.clockContainer} col-12 d-flex flex-column align-items-center`}>
-          <ClockSection onPunch={handlePunch} jornadaIniciada={jornadaIniciada} />
-        </div>
-
-        <div className={`${styles.linhaSeparadora} my-4 d-flex justify-content-center`}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1175"
-            height="2"
-            viewBox="0 0 1175 2"
-            fill="none"
-          >
-            <path d="M0 1H1174.5" stroke="#BCBABA" strokeWidth="1" />
-          </svg>
-        </div>
-
-        <div className={`${styles.bottomSection} row mt-5`}>
-          <DayTrack trackItems={trackItems} />
-          <WeekSummary summaryData={summaryData} />
-        </div>
-      </div>
-
-      <ModalPonto show={showModal} />
-    </div>
-  );
+    );
 }
 
 export default PunchClockPage;

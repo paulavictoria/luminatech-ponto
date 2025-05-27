@@ -1,0 +1,192 @@
+/* src/pages/HistoryPage/HistoryPage.module.css */
+
+/* Variáveis e resets globais já devem estar em App.module.css */
+
+.mainContent { /* Anteriormente 'main' */
+    max-width: 100%;
+    padding: 3.125rem 3.3125rem 0 3.3125rem; /* 50px 53px 0 53px */
+    flex-grow: 1; /* Permite que o conteúdo ocupe o espaço restante abaixo do header */
+    overflow-y: auto; /* Adicionado para permitir scroll se o conteúdo for muito grande */
+    background-color: var(--primary-color); /* Garante que o fundo da página seja correto */
+    display: flex; /* Adicionado para organizar o conteúdo interno */
+    flex-direction: column; /* Organiza topo e tabela em coluna */
+}
+
+.topSection { /* Anteriormente 'topo' */
+    display: flex;
+    margin-bottom: 3.125rem; /* 50px */
+    width: 100%; /* Ocupa toda a largura do mainContent */
+    align-items: center; /* Alinha verticalmente */
+    justify-content: space-between; /* Espaçamento entre titulo e cards */
+    flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+    gap: 1rem; /* Espaçamento entre itens em telas menores */
+}
+
+.titleSection { /* Anteriormente 'titulo' */
+    width: 33%; /* Mantendo a proporção do seu HTML */
+    margin-left: 2.5rem; /* 40px */
+    display: flex;
+    align-items: center;
+    /* Remover flex-shrink para garantir que o título não encolha demais */
+    flex-shrink: 0;
+}
+
+.title { /* Anteriormente 'titulo h1' */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 3.4375rem; /* 55px */
+    color: var(--text-color); /* Definindo a cor do texto */
+    white-space: nowrap; /* Impede que o título quebre linha */
+}
+
+.cards { /* Anteriormente 'cards' */
+    display: flex;
+    width: 66%; /* Mantendo a proporção do seu HTML */
+    justify-content: flex-end;
+    gap: 3.4375rem; /* 55px */
+    flex-wrap: wrap; /* Permite que os cards quebrem linha */
+    flex-grow: 1; /* Permite que os cards ocupem o espaço restante */
+}
+
+.dailyMonthlyCard { /* Anteriormente 'diario-mensal-cards' */
+    background-color: transparent;
+    border-radius: 0.6875rem; /* 11px */
+    border: 0.125rem solid #A19B9B; /* 2px */
+    text-align: center;
+    width: 20.625rem; /* 330px */
+    height: 8.125rem; /* 130px */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Impede que o card encolha demais */
+}
+
+.dailyMonthlyCard h3 {
+    font-family: 'Noto sans', sans-serif;
+    font-size: 1.4375rem; /* 23px */
+    color: #919191;
+    font-weight: 500;
+    margin-bottom: 0.5rem; /* Espaçamento entre h3 e horas */
+}
+
+.hours { /* Anteriormente 'horas' */
+    font-family: 'Noto sans', sans-serif;
+    font-size: 2.8125rem; /* 45px */
+    font-weight: 500;
+    color: var(--text-color); /* Definindo a cor do texto */
+    text-shadow:
+        -0.08125rem -0.08125rem 0 #A19B9B, /* -1.3px */
+        0.08125rem -0.08125rem 0 #A19B9B, /* 1.3px */
+        -0.08125rem 0.08125rem 0 #A19B9B, /* -1.3px */
+        0.08125rem 0.08125rem 0 #A19B9B; /* 1.3px */
+}
+
+.tableContainer { /* Anteriormente 'table-container' */
+    max-height: 34.37rem; /* 550px */
+    overflow-y: auto;
+    margin-top: 1.25rem; /* 20px */
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary-color) rgba(235, 231, 231, 0.5);
+    width: 100%; /* Garante que o container da tabela ocupe 100% da largura disponível */
+}
+
+.historyTable { /* Anteriormente 'historico-table' */
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 0.75rem; /* 0 12px */
+}
+
+.historyTableHead th { /* Anteriormente 'historico-table-head th' */
+    position: sticky;
+    top: 0;
+    background-color: var(--primary-color);
+    text-align: center;
+    font-family: 'Noto Sans Display', Sans-serif;
+    font-size: 1.4375rem; /* 23px */
+    font-weight: 700;
+    padding: 0.5rem 0; /* Adiciona um padding aos cabeçalhos */
+    color: var(--text-color); /* Definindo a cor do texto */
+}
+
+.historyTableBody td { /* Anteriormente 'historico-table-body td' */
+    background-color: #F0F0F0;
+    padding: 1.5625rem 0.9375rem; /* 25px 15px */
+    text-align: center;
+    font-family: 'Noto sans', sans-serif;
+    font-size: 1.25rem; /* 20px */
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.historyTableBody tr td:first-child { /* Anteriormente 'historico-table-body tr td:first-child' */
+    border-top-left-radius: 0.6875rem; /* 11px */
+    border-bottom-left-radius: 0.6875rem; /* 11px */
+}
+
+.historyTableBody tr td:last-child { /* Anteriormente 'historico-table-body tr td:last-child' */
+    border-top-right-radius: 0.6875rem; /* 11px */
+    border-bottom-right-radius: 0.6875rem; /* 11px */
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 992px) {
+    .topSection {
+        flex-direction: column;
+        align-items: flex-start; /* Alinha ao início quando em coluna */
+        gap: 2rem;
+    }
+
+    .titleSection {
+        width: 100%;
+        margin-left: 0;
+        justify-content: center; /* Centraliza o título */
+    }
+
+    .cards {
+        width: 100%;
+        justify-content: center; /* Centraliza os cards */
+    }
+
+    .dailyMonthlyCard {
+        width: 100%; /* Ocupa toda a largura disponível */
+        max-width: 330px; /* Limita a largura máxima */
+    }
+
+    .mainContent {
+        padding: 2rem 1.5rem 0 1.5rem; /* Reduz o padding em telas menores */
+    }
+
+    .historyTableHead th {
+        font-size: 1.2rem;
+    }
+
+    .historyTableBody td {
+        font-size: 1rem;
+        padding: 1rem 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .dailyMonthlyCard h3 {
+        font-size: 1.2rem;
+    }
+
+    .hours {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .historyTableHead th {
+        font-size: 1rem;
+    }
+
+    .historyTableBody td {
+        font-size: 0.9rem;
+    }
+}

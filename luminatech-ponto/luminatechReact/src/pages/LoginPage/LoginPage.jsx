@@ -28,7 +28,7 @@ function LoginPage() {
     // --- LÓGICA DE AUTENTICAÇÃO REAL VIRIA AQUI ---
     // Você faria uma chamada de API, validação no backend, etc.
     // Por enquanto, vamos simular um login bem-sucedido:
-    if (emailCpf === "usuario@example.com" && password === "senha123") { // <-- EX: Credenciais de teste
+    if (emailCpf === "admin" && password === "admin") { // <-- EX: Credenciais de teste
       console.log('Login bem-sucedido!');
       // Redireciona para a página de bater ponto
       navigate('/punch-clock'); // <--- REDIRECIONA AQUI APÓS SUCESSO
