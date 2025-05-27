@@ -1,0 +1,145 @@
+/* src/pages/PunchClockPage/PunchClockPage.module.css */
+
+/* Variáveis de CSS (mantenha como está) */
+:root {
+  --primary-color: #ebe7e7;
+  --secondary-color: #6b1294;
+  --color-secondary: #cf8ceea9;
+  --secondary-color-hover: #611186;
+  --text-color: #0f0f0f;
+  --stroker: #6b6b6b;
+  --hover-roxo: #e09eff96;
+  --corBranca: #ffffff;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--primary-color);
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+/* O .content é o contêiner principal da página, ele precisa ser centralizado */
+.content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    max-width: 1280px !important; /* Adicionado !important aqui */
+    margin: 0 auto !important; /* <-- ESSENCIAL: Centraliza horizontalmente o .content */
+    padding: 32px 20px 0 20px;
+    box-sizing: border-box;
+}
+
+.greeting {
+    text-align: center;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+/* O clockContainer pode ter seu próprio CSS Module, mas se estiver aqui, está ok */
+/* (Mantido o placeholder do seu código anterior) */
+/*
+.clockContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    max-width: 400px;
+    margin: 0 auto;
+}
+*/
+
+.linhaSeparadora {
+    width: 90%;
+    max-width: 1175px;
+    height: 2px;
+    flex-shrink: 0;
+    margin: 24px auto !important; /* Adicionado !important aqui */
+    display: flex;
+    justify-content: center;
+}
+
+.linhaSeparadora svg {
+    width: 100%;
+    height: 2px;
+}
+
+.bottomSection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os itens (DayTrack e WeekSummary) dentro do bottomSection */
+    align-items: flex-start;
+    gap: 32px;
+    width: 100%;
+    margin-top: 48px;
+    padding: 0 20px 32px 20px;
+    box-sizing: border-box;
+
+    max-width: 1280px !important; /* Adicionado !important aqui */
+    margin-left: auto !important; /* Adicionado !important aqui */
+    margin-right: auto !important; /* Adicionado !important aqui */
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Ajustes para telas médias/pequenas: DayTrack e WeekSummary um abaixo do outro */
+@media (max-width: 768px) {
+    .content {
+        padding: 20px 15px 0 15px;
+    }
+
+    .bottomSection {
+        flex-direction: column;
+        gap: 24px;
+        padding: 0 15px 20px 15px;
+        align-items: center;
+    }
+
+    .linhaSeparadora {
+        width: 95%;
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 600px) {
+    .content {
+        padding: 15px 10px 0 10px;
+    }
+    .linhaSeparadora {
+        width: 98%;
+    }
+}
+
+/* Ajustes para telas MUITO pequenas, como smartphones na vertical */
+@media (max-width: 480px) {
+    .content {
+        padding: 10px 5px 0 5px;
+    }
+    .greeting h2 {
+        font-size: clamp(1.2rem, 5.5vw, 1.8rem);
+    }
+    .greeting p {
+        font-size: clamp(0.8rem, 3vw, 1rem);
+    }
+    /* Se clockContainer estiver aqui, ajuste */
+    /*
+    .clockContainer {
+        padding: 10px 0;
+        max-width: 300px;
+    }
+    */
+    .bottomSection {
+        gap: 15px;
+        padding: 0 10px 15px 10px;
+    }
+}

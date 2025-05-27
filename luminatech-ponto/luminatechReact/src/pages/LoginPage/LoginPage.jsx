@@ -1,18 +1,20 @@
 // src/pages/LoginPage/LoginPage.jsx
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // <--- ADICIONE useNavigate AQUI
 import styles from './LoginPage.module.css';
 
 // Seus imports de imagem
 import logoLumina from '../../assets/logo_lumina.png';
 import logoGoogle from '../../assets/logo-google.png';
-import logoMicrosoft from '../../assets/logo-microsoft.png'; // Caminho pode precisar de ajuste
-import artLateral1 from '../../assets/art-lateral1.png'; // <--- ESTE É IMPORTANTE NOVAMENTE
+import logoMicrosoft from '../../assets/logo-microsoft.png';
+import artLateral1 from '../../assets/art-lateral1.png';
 
 function LoginPage() {
   const [emailCpf, setEmailCpf] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+
+  const navigate = useNavigate(); // <--- INICIALIZE useNavigate AQUI
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -23,12 +25,24 @@ function LoginPage() {
       return;
     }
 
+    // --- LÓGICA DE AUTENTICAÇÃO REAL VIRIA AQUI ---
+    // Você faria uma chamada de API, validação no backend, etc.
+    // Por enquanto, vamos simular um login bem-sucedido:
+    if (emailCpf === "usuario@example.com" && password === "senha123") { // <-- EX: Credenciais de teste
+      console.log('Login bem-sucedido!');
+      // Redireciona para a página de bater ponto
+      navigate('/punch-clock'); // <--- REDIRECIONA AQUI APÓS SUCESSO
+    } else {
+      setError("E-mail ou CPF e/ou senha incorretos."); // Mensagem de erro para credenciais inválidas
+    }
+    // --- FIM DA LÓGICA DE AUTENTICAÇÃO REAL ---
+
     console.log('Dados de Login:', { emailCpf, password });
   };
 
   return (
     <div className={`container-fluid ${styles.loginContainer}`}>
-      <div className="row flex-grow-1 w-100 g-0">
+      <div className={`row flex-grow-1 w-100 g-0 ${styles.rowLayout}`}>
         {/* Coluna da Esquerda (Formulário) */}
         <div className="col-md-6 d-flex justify-content-center align-items-center">
           <div id="container-left" className={`login-form text-center ${styles.containerLeft}`}>
@@ -82,14 +96,13 @@ function LoginPage() {
                 Cadastre-se
               </Link>
             </p>
-            {/* NOVO: Direitos autorais no rodapé, se você quiser. */}
             <p className={styles.copyright}>© 2025 TODOS OS DIREITOS RESERVADOS</p>
           </div>
         </div>
         {/* Coluna da Direita (Imagem) */}
         <div className="col-md-6 d-flex justify-content-center align-items-center">
           <div id="container-right" className={`login-image ${styles.containerRight}`}>
-            <img src={artLateral1} alt="Imagem de Login" className={`img-fluid ${styles.loginImage}`} />
+            <img src={artLateral1} alt="Imagem de Login" className={`${styles.loginImage}`} />
           </div>
         </div>
       </div>

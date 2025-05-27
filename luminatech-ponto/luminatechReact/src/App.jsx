@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoginPage from './pages/LoginPage/LoginPage';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
 import ForgotPasswordPage from './pages/ForgotPasswordPage/ForgotPasswordPage';
-// import PontoPage from './pages/PontoPage/PontoPage'; // Exemplo
+import PunchClockPage from './pages/PunchClockPage/PunchClockPage';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <Route path="/" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
-        {/* <Route path="/ponto" element={<PontoPage />} /> */}
+        <Route path="/punch-clock" element={<PunchClockPage />} />
 
         {/* Você pode adicionar uma rota para 404 Not Found também */}
         {/* <Route path="*" element={<div>Página Não Encontrada</div>} /> */}
