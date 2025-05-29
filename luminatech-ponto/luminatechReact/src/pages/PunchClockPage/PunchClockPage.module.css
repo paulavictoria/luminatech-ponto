@@ -1,5 +1,12 @@
 /* src/pages/PunchClockPage/PunchClockPage.module.css */
-
+html, body, #root {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
 /* Variáveis de CSS (mantenha como está se já as tem em um arquivo global ou duplique aqui) */
 :root {
     --primary-color: #ebe7e7;
@@ -53,7 +60,8 @@ body {
 
 .greeting h2 {
     font-family: 'Roboto', sans-serif;
-    font-size: 2.5rem; /* 40px */
+    margin-right: 200px;
+    font-size: 1.75rem; 
     font-weight: 600;
     color: var(--text-color);
     margin-bottom: 5px;
@@ -71,7 +79,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 0;
+    padding: 10px 0;
     max-width: 400px; /* Garante que o relógio não seja muito grande */
     margin: 0 auto; /* Centraliza o relógio */
 }

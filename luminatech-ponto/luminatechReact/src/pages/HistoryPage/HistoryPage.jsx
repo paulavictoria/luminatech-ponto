@@ -23,12 +23,36 @@ function HistoryPage({ historyRecords: propHistoryRecords }) {
             totalHours: '8h 00m',
         },
         {
-            date: new Date('2025-05-24T00:00:00'), // Três dias atrás
+            date: new Date('2025-05-23T00:00:00'), // Três dias atrás
             entry: new Date('2025-05-24T09:15:00'),
             breakStart: new Date('2025-05-24T12:15:00'),
             breakEnd: new Date('2025-05-24T13:45:00'),
             exit: new Date('2025-05-24T18:15:00'),
-            totalHours: '7h 45m', // Exemplo com horas não cheias
+            totalHours: '7h 50m', // Exemplo com horas não cheias
+        },
+          {
+            date: new Date('2025-05-22T00:00:00'), // 4 dias atrás
+            entry: new Date('2025-05-24T09:15:00'),
+            breakStart: new Date('2025-05-24T12:15:00'),
+            breakEnd: new Date('2025-05-24T13:45:00'),
+            exit: new Date('2025-05-24T18:45:00'),
+            totalHours: '9h 35m', // Exemplo com horas não cheias
+        },
+          {
+            date: new Date('2025-05-21T00:00:00'), // 5 dias atrás
+            entry: new Date('2025-05-24T09:15:00'),
+            breakStart: new Date('2025-05-24T12:15:00'),
+            breakEnd: new Date('2025-05-24T13:45:00'),
+            exit: new Date('2025-05-24T18:55:00'),
+            totalHours: '8h 15m', // Exemplo com horas não cheias
+        },
+          {
+            date: new Date('2025-05-20T00:00:00'), // 6 dias atrás
+            entry: new Date('2025-05-24T09:15:00'),
+            breakStart: new Date('2025-05-24T12:15:00'),
+            breakEnd: new Date('2025-05-24T13:45:00'),
+            exit: new Date('2025-05-24T19:55:00'),
+            totalHours: '8h 07m', // Exemplo com horas não cheias
         },
     ]);
 

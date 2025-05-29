@@ -13,9 +13,10 @@
 }
 
 .mainContent {
+ 
     background-color: var(--primary-color); /* Aplica a cor de fundo aqui */
     padding: 60px 20px 20px 90px;
-    min-height: calc(100vh - 120px); /* Ajuste a altura total menos a altura do Header */
+    min-height: 100vh; /* Ajuste a altura total menos a altura do Header */
     display: flex; /* Adicione display flex */
     flex-direction: column; /* Para organizar o conteúdo em coluna */
     justify-content: flex-start; /* Alinha o conteúdo ao topo */

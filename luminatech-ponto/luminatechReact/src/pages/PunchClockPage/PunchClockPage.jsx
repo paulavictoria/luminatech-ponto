@@ -2,6 +2,7 @@
 import React, { useState, useCallback } from 'react';
 import styles from './PunchClockPage.module.css';
 
+
 // Importe os componentes que criaremos (ou que já foram criados)
 import ClockSection from '../../components/ClockSection/ClockSection';
 import DayTrack from '../../components/DayTrack/DayTrack';

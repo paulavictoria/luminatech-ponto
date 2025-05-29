@@ -11,7 +11,7 @@ function Header({ userData }) {
     const location = useLocation();
 
     return (
-        <div className={`${styles.header} row align-items-center px-4 py-3`}>
+        <div className={`${styles.header} row align-items-center px-3 py-2`}>
             <div className={`${styles.profile} col-auto d-flex align-items-center`}>
                 <img
                     src={gabiProfileImg}
