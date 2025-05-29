@@ -94,32 +94,38 @@ body {
 .bottomSection {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap; /* Permite que os itens quebrem linha */
-    justify-content: center; /* Centraliza os itens (DayTrack e WeekSummary) */
+    flex-wrap: nowrap; /* Impede que os elementos quebrem para a próxima linha */
+    justify-content: space-between; /* Distribui os elementos com espaço entre eles */
     align-items: flex-start;
     gap: 32px;
     width: 100%;
-    margin-top: 48px;
+    max-width: 1280px; /* Mantém a largura máxima */
+    margin: 48px auto 0; /* Centraliza e mantém margem superior */
     padding: 0 20px 32px 20px;
     box-sizing: border-box;
-    max-width: 1280px; /* Mantém a largura máxima */
-    margin-left: auto; /* Centraliza */
-    margin-right: auto; /* Centraliza */
+}
+
+.bottomSection > * {
+    flex: 1; /* Faz cada componente ocupar espaço igual */
+    min-width: 0; /* Evita que os filhos excedam o contêiner */
+    max-width: 600px; /* Limita a largura máxima de cada componente */
 }
 
 /* --- Media Queries para Responsividade --- */
 
 /* Ajustes para telas médias/pequenas: DayTrack e WeekSummary um abaixo do outro */
-@media (max-width: 992px) { /* Ajustei o breakpoint para 992px para tablets */
-    .content {
-        padding: 20px 30px 0 30px;
+@media (max-width: 992px) {
+    .bottomSection {
+        flex-direction: column; /* Um abaixo do outro em telas menores */
+        flex-wrap: wrap; /* Permite quebra, caso necessário */
+        gap: 24px;
+        align-items: center; /* Centraliza os componentes */
     }
 
-    .bottomSection {
-        flex-direction: column; /* Um abaixo do outro */
-        gap: 24px;
-        padding: 0 30px 20px 30px;
-        align-items: center; /* Centraliza os componentes */
+    .bottomSection > * {
+        flex: none; /* Remove o flex proporcional */
+        width: 100%; /* Ocupa toda a largura disponível */
+        max-width: none; /* Remove o limite de largura */
     }
 
     .linhaSeparadora {
