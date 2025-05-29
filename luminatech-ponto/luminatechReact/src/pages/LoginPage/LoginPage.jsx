@@ -83,11 +83,11 @@ function LoginPage() {
               <div className={`divider my-3 ${styles.divider}`}>Ou</div>
               <button id="btn-google" type="button" className={`btn btn-outline-danger w-100 mb-2 ${styles.btnGoogle}`}>
                 <img src={logoGoogle} alt="Google Logo" className={`btn-logo me-2 ${styles.btnLogo}`} />
-                Entre com o Google
+                Fazer login com o Google
               </button>
               <button id="btn-microsoft" type="button" className={`btn btn-outline-primary w-100 ${styles.btnMicrosoft}`}>
                 <img src={logoMicrosoft} alt="Microsoft Logo" className={`btn-logo me-2 ${styles.btnLogo}`} />
-                Entre com a Microsoft
+                Fazer login com o Microsoft
               </button>
             </form>
             <p id="p-conta" className={`mt-4 ${styles.pConta}`}>
