@@ -7,11 +7,8 @@
     --secondary-color-hover: #9b3bc7f3;
     --text-color: #0F0F0F;
     --stroker: #a0a0a0;
-    --btn-google: rgb(160, 38, 38);
-    --btn-microsoft: rgb(62, 103, 238);
-    --btn-google-hover: rgba(175, 46, 46, 0.904);
-    --btn-microsoft-hover: rgba(73, 112, 238, 0.925);
     --hover-roxo: #e09eff96;
+    --hover-stroker: #c0bfbf79;
     --corBranca: #FFFFFF;
     --background-soft-purple: #f3e9fa;
     --form-bg-color: #ffffff;
@@ -47,7 +44,7 @@
     background-color: var(--form-bg-color);
     width: 100%;
     height: 100%;
- 
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -172,32 +169,36 @@
     right: 0;
 }
 
+
 .btnGoogle,
 .btnMicrosoft {
     border-radius: var(--border-radius-sm) !important;
+    border-color: var(--border-btns) !important;
     padding: 12px !important;
     width: 100% !important;
     font-size: var(--font-size-btn) !important;
     font-weight: 500 !important;
     margin-bottom: 1rem !important;
+    background-color: var(--corBranca) !important;
+    color: var(--text-color) !important;
 }
 
-.btnGoogle {
-    background-color: var(--btn-google) !important;
-    color: var(--corBranca) !important;
+.btn-google {
+    background-color: var(--btn-google-color) !important;
+    color: var(--text-color) !important;
 }
 
 .btnGoogle:hover {
-    background-color: var(--btn-google-hover) !important;
+    background-color: var(--hover-stroker) !important;
 }
 
-.btnMicrosoft {
-    background-color: var(--btn-microsoft) !important;
-    color: var(--corBranca) !important;
+.btn-microsoft {
+    background-color: var(--btn-microsoft-color) !important;
+    color: var(--text-color) !important;
 }
 
 .btnMicrosoft:hover {
-    background-color: var(--btn-microsoft-hover) !important;
+    background-color: var(--hover-stroker) !important;
 }
 
 .btnLogo {
@@ -230,4 +231,3 @@
     font-size: 0.8rem;
     margin-top: 5rem;
 }
-

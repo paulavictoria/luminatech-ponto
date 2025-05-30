@@ -8,6 +8,7 @@
     --text-color: #0F0F0F;
     --stroker: #a0a0a0;
     --border-btns: #c0bfbfd7;
+    --hover-stroker: #c0bfbf79;
     --hover-roxo: #edc6ff96;
     --corBranca: #FFFFFF;
     --background-soft-purple: #f3e9fa;
@@ -187,7 +188,7 @@
 }
 
 .btnGoogle:hover {
-    background-color: var(--hover-roxo) !important;
+    background-color: var(--hover-stroker) !important;
 }
 
 .btn-microsoft {
@@ -196,7 +197,7 @@
 }
 
 .btnMicrosoft:hover {
-    background-color: var(--hover-roxo) !important;
+    background-color: var(--hover-stroker) !important;
 }
 
 .btnLogo {

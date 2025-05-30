@@ -113,13 +113,13 @@ function RegisterPage() { // Nome do componente consistente com o arquivo
                 Cadastrar {/* Texto do botão para registro */}
               </button>
               <div className={`divider my-3 ${styles.divider}`}>Ou</div>
-              <button id="btn-google" type="button" className={`btn btn-outline-danger w-100 mb-2 invisible ${styles.btnGoogle}`}>
+              <button id="btn-google" type="button" className={`btn btn-outline-danger w-100 mb-2 ${styles.btnGoogle}`}>
                 <img src={logoGoogle} alt="Google Logo" className={`btn-logo me-2 ${styles.btnLogo}`} />
-                Cadastrar com o Google {/* Texto mais apropriado */}
+                Fazer login com o Google {/* Texto mais apropriado */}
               </button>
-              <button id="btn-microsoft" type="button" className={`btn btn-outline-primary w-100 invisible ${styles.btnMicrosoft}`}>
+              <button id="btn-microsoft" type="button" className={`btn btn-outline-primary w-100  ${styles.btnMicrosoft}`}>
                 <img src={logoMicrosoft} alt="Microsoft Logo" className={`btn-logo me-2 ${styles.btnLogo}`} />
-                Cadastrar com a Microsoft {/* Texto mais apropriado */}
+                Fazer login com o Microsoft {/* Texto mais apropriado */}
               </button>
             </form>
             <p id="p-conta" className={`mt-4 ${styles.pConta}`}>

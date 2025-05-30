@@ -20,10 +20,10 @@ function PunchClockPage() {
     const handlePunch = useCallback(() => {
         setJornadaIniciada(prev => !prev);
         setShowModal(true);
-        // Oculta o modal após 4 segundos
+        // Oculta o modal após 3 segundos
         setTimeout(() => {
             setShowModal(false);
-        }, 4000);
+        }, 3000);
     }, []);
 
     // Dados fake para DayTrack
