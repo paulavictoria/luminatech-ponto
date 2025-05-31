@@ -1,0 +1,85 @@
+/* src/components/ModalPonto/ModalPonto.module.css */
+
+.modalPontoBackdrop {
+  display: flex; /* Always flex when shown */
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.modalPontoRectangle {
+  width: 593px;
+  height: 368px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  background: linear-gradient(180deg, var(--secondary-color) 0%, rgba(33, 6, 46, 0.9) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInDown 0.7s; /* animate__fadeInDown é do Animate.css, se não estiver usando, remova a classe */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+   position: relative; /* Necessário para o botão X */
+}
+
+.modalPontoText {
+  color: var(--corBranca);
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 24px;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  background: transparent;
+  border: none;
+  font-size: 2.2rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 2;
+  transition: color 0.2s;
+  line-height: 1;
+}
+
+.closeBtn:hover {
+  color: #ffb3d9;
+}
+
+
+/* @keyframes fadeInDown está no CSS original, movido para cá */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-60px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Media Query para o modal */
+@media (max-width: 768px) {
+  .modalPontoRectangle {
+    width: 90%;
+    height: auto;
+    min-height: 200px;
+    padding: 20px;
+  }
+  .modalPontoText {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modalPontoText {
+    font-size: 1.2rem;
+  }
+}

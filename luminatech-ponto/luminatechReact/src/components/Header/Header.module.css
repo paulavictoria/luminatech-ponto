@@ -1,0 +1,145 @@
+/* src/components/Header/Header.module.css */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 32px 16px 32px;
+  border-bottom: 1px solid var(--stroker);
+  background: var(--primary-color);
+  box-sizing: border-box; /* Inclui padding e border na largura */
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profileImg {
+  margin-left: 100px; /* Ajuste conforme o design */
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--secondary-color);
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.nameUsuario {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.roleUsuario {
+  font-size: 1rem;
+  color: var(--stroker);
+}
+
+.nav {
+  display: flex;
+  gap: 16px;
+}
+
+.navBtn {
+  border: 2px solid var(--secondary-color);
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 18px;
+  padding: 7px 18px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.navBtn.active,
+.navBtn:hover {
+  background: var(--secondary-color);
+  color: var(--corBranca);
+}
+
+.notif {
+  margin-left: 20px;
+  font-size: 1.6rem; /* Tamanho do ícone, se fosse um ícone de fonte */
+  color: var(--secondary-color);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.notificationSvg { /* Para o SVG importado como img */
+  width: 20.667px; /* Defina o tamanho do seu SVG */
+  height: 27.5px;
+  /* Certifique-se que o SVG seja preenchido com a cor desejada se for um SVG com fill */
+  /* filter: drop-shadow(0 0 0 var(--secondary-color)); */
+  /* Você pode precisar ajustar o fill dentro do próprio SVG se for difícil estilizar via CSS */
+}
+
+.notifDotCustom {
+  position: absolute;
+  right: -0.083px; /* Ajuste fino para posicionamento */
+  top: 3px;
+  width: 7.75px;
+  height: 8.25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* Não impede cliques no sino por baixo */
+}
+
+/* Media Queries para o Header */
+@media (max-width: 900px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  .profileImg {
+    margin-left: 0; /* Remove margem extra em telas menores */
+  }
+  .nav {
+    flex-wrap: wrap; /* Permite que os botões quebrem linha */
+    justify-content: center;
+    margin-top: 15px;
+  }
+  .navBtn {
+    font-size: 1rem;
+    padding: 8px 15px;
+    margin-bottom: 8px;
+  }
+  .notif {
+    margin-left: 0; /* Remove margem extra */
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 12px;
+  }
+  .profileImg {
+    width: 40px;
+    height: 40px;
+  }
+  .nameUsuario {
+    font-size: 1.2rem;
+  }
+  .roleUsuario {
+    font-size: 0.9rem;
+  }
+  .navBtn {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+  .notificationSvg {
+    width: 18px;
+    height: 24px;
+  }
+}

@@ -1,18 +1,20 @@
 // src/pages/LoginPage/LoginPage.jsx
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // <--- ADICIONE useNavigate AQUI
 import styles from './LoginPage.module.css';
 
 // Seus imports de imagem
 import logoLumina from '../../assets/logo_lumina.png';
 import logoGoogle from '../../assets/logo-google.png';
-import logoMicrosoft from '../../assets/logo-microsoft.png'; // Caminho pode precisar de ajuste
-import artLateral1 from '../../assets/art-lateral1.png'; // <--- ESTE É IMPORTANTE NOVAMENTE
+import logoMicrosoft from '../../assets/logo-microsoft.png';
+import artLateral1 from '../../assets/art-lateral1.png';
 
 function LoginPage() {
   const [emailCpf, setEmailCpf] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+
+  const navigate = useNavigate(); // <--- INICIALIZE useNavigate AQUI
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -23,12 +25,24 @@ function LoginPage() {
       return;
     }
 
+    // --- LÓGICA DE AUTENTICAÇÃO REAL VIRIA AQUI ---
+    // Você faria uma chamada de API, validação no backend, etc.
+    // Por enquanto, vamos simular um login bem-sucedido:
+    if (emailCpf === "admin" && password === "admin") { // <-- EX: Credenciais de teste
+      console.log('Login bem-sucedido!');
+      // Redireciona para a página de bater ponto
+      navigate('/punch-clock'); // <--- REDIRECIONA AQUI APÓS SUCESSO
+    } else {
+      setError("E-mail ou CPF e/ou senha incorretos."); // Mensagem de erro para credenciais inválidas
+    }
+    // --- FIM DA LÓGICA DE AUTENTICAÇÃO REAL ---
+
     console.log('Dados de Login:', { emailCpf, password });
   };
 
   return (
     <div className={`container-fluid ${styles.loginContainer}`}>
-   <div className={`row flex-grow-1 w-100 g-0 ${styles.rowLayout}`}>
+      <div className={`row flex-grow-1 w-100 g-0 ${styles.rowLayout}`}>
         {/* Coluna da Esquerda (Formulário) */}
         <div className="col-md-6 d-flex justify-content-center align-items-center">
           <div id="container-left" className={`login-form text-center ${styles.containerLeft}`}>
@@ -69,11 +83,11 @@ function LoginPage() {
               <div className={`divider my-3 ${styles.divider}`}>Ou</div>
               <button id="btn-google" type="button" className={`btn btn-outline-danger w-100 mb-2 ${styles.btnGoogle}`}>
                 <img src={logoGoogle} alt="Google Logo" className={`btn-logo me-2 ${styles.btnLogo}`} />
-                Entre com o Google
+                Fazer login com o Google
               </button>
               <button id="btn-microsoft" type="button" className={`btn btn-outline-primary w-100 ${styles.btnMicrosoft}`}>
                 <img src={logoMicrosoft} alt="Microsoft Logo" className={`btn-logo me-2 ${styles.btnLogo}`} />
-                Entre com a Microsoft
+                Fazer login com o Microsoft
               </button>
             </form>
             <p id="p-conta" className={`mt-4 ${styles.pConta}`}>
@@ -82,7 +96,6 @@ function LoginPage() {
                 Cadastre-se
               </Link>
             </p>
-            {/* NOVO: Direitos autorais no rodapé, se você quiser. */}
             <p className={styles.copyright}>© 2025 TODOS OS DIREITOS RESERVADOS</p>
           </div>
         </div>
@@ -90,7 +103,6 @@ function LoginPage() {
         <div className="col-md-6 d-flex justify-content-center align-items-center">
           <div id="container-right" className={`login-image ${styles.containerRight}`}>
             <img src={artLateral1} alt="Imagem de Login" className={`${styles.loginImage}`} />
-
           </div>
         </div>
       </div>

@@ -1,0 +1,437 @@
+/* src/pages/JustificationsPage/JustificationsPage.module.css */
+
+/* Variáveis de cor (se não estiverem em um arquivo global) */
+:root {
+    --primary-color: #EBE7E7;
+    --secondary-color: #6B1294;
+    --color-secondary: #cf8ceea9;
+    --secondary-color-hover: #611186;
+    --text-color: #0F0F0F;
+    --stroker: #6b6b6b;
+    --hover-roxo: #e09eff96;
+    --corBranca: #FFFFFF;
+    --status-aprovado: #47763B;
+    --status-analise: #B1621D;
+    --status-recusado: #B22A2A;
+}
+
+body {
+    background-color: var(--primary-color);
+    max-width: none; /* Removendo max-width do body se o App.jsx já gerencia o container */
+    margin: 0; /* Certifica-se que não há margin no body */
+}
+
+.mainContent {
+    background-color: var(--primary-color);
+    padding: 30px 130px 17px 130px;
+    min-height: calc(100vh - 120px); /* Altura total menos a altura do Header */
+}
+
+/* SECTION SUPERIOR */
+.sectionSuperior { /* Alterado de .section-superior */
+    display: grid;
+    grid-template-columns: 50% 1fr;
+    gap: 40px; /* Adicionado um gap para melhor espaçamento entre as colunas */
+    margin-bottom: 50px;
+}
+
+.sectionSuperiorEsquerda h2 { /* Alterado de .section-superior-esquerda */
+    font-family: 'Roboto', sans-serif;
+    font-size: 38px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 3px;
+}
+
+.sectionSuperiorDireita h2 { /* Alterado de .section-superior-direita */
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    font-size: 38px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 57px;
+    justify-content: flex-end;
+}
+
+.sectionSuperiorEsquerda p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #4D4A4A;
+    margin-left: 5px;
+    margin-bottom: 25px;
+}
+
+.cardsEsquerda { /* Alterado de .cards-esquerda */
+    display: flex;
+    gap: 22px;
+}
+
+.cardJustificativa, .cardAjuste { /* Alterado de .card-justificativa, .card-ajuste */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: transparent;
+    border: 2px solid #A19B9B;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 10px; /* Adicionado padding para melhor espaçamento interno */
+    transition: all 0.2s ease-in-out;
+}
+
+.cardJustificativa {
+    width: 275px;
+    height: 130px;
+}
+
+.cardAjuste {
+    width: 240px;
+    height: 130px;
+}
+
+.cardJustificativa:hover, .cardAjuste:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.cardJustificativaConteudo, .cardAjusteConteudo { /* Alterado */
+    display: flex;
+    flex-direction: column;
+}
+
+.cardJustificativaConteudoTopo, .cardAjusteConteudoTopo { /* Alterado */
+    display: flex;
+    align-items: center;
+}
+
+.cardJustificativaImagem { /* Alterado */
+    width: 54px;
+    height: 60px;
+    margin-top: 15px;
+    margin-left: 11px;
+    flex-shrink: 0; /* Evita que a imagem encolha */
+}
+
+.cardAjusteImagem { /* Alterado */
+    width: 54px;
+    height: 60px;
+    margin-top: 2px;
+    margin-left: 15px;
+    flex-shrink: 0;
+}
+
+.cardJustificativa h3, .cardAjuste h3 {
+    font-family: 'Noto sans', sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-top: 14px;
+    margin-left: 10px; /* Ajuste para melhor espaçamento com a imagem */
+}
+
+.cardJustificativa p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #4D4A4A;
+    width: 200px;
+    margin-left: 25px; /* Manter a margem para alinhamento */
+}
+
+.cardAjuste p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #4D4A4A;
+    width: 170px;
+    margin-left: 25px; /* Manter a margem para alinhamento */
+}
+
+.cardsDireita { /* Alterado */
+    display: flex;
+    gap: 22px;
+    justify-content: flex-end;
+}
+
+.cardStatus { /* Alterado */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: transparent;
+    width: 150px;
+    height: 130px;
+    border: 2px solid #A19B9B;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.cardStatus h3 {
+    font-family: 'Noto sans', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #4D4A4A;
+    margin-bottom: 15px;
+}
+
+.statusNumero { /* Alterado */
+    font-family: 'Noto sans', sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    color: #4D4A4A;
+    text-align: left;
+    margin-left: 27px;
+}
+
+/* FIM SECTION SUPERIOR */
+
+/* TABELA DE AJUSTES */
+
+.tituloH2 { /* Alterado */
+    font-family: 'roboto', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    margin-bottom: 30px;
+    margin-top: 22px;
+    color: var(--text-color);
+}
+
+.tabela {
+    text-align: center;
+    width: 100%;
+    border-collapse: separate; /* Usar separate para borderRadius nos cantos */
+    border-spacing: 0; /* Remove espaçamento entre células */
+    margin-bottom: 40px; /* Espaço antes da próxima seção */
+}
+
+.tabelaThead { /* Alterado */
+    background-color: #B485CA;
+    color: #4D4A4A;
+}
+
+.tabela th {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.tabela td {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 15px;
+    border-bottom: 1px solid #BCBABA;
+}
+
+.tabela tbody tr:last-child td {
+    border-bottom: none; /* Remover borda da última linha */
+}
+
+/* Arredondamento de bordas para a tabela */
+.tabela thead tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+}
+.tabela thead tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+}
+.tabela tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+.tabela tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+.primeiraTh { /* Alterado */
+    border-bottom-left-radius: 0; /* Removido para usar o seletor da primeira linha */
+    border-top-left-radius: 0; /* Removido para usar o seletor da primeira linha */
+}
+
+.icone {
+    width: 1px;
+    cursor: pointer;
+    /* Removidas bordas de radius daqui, aplicadas no tbody/thead */
+}
+
+.diaCard { /* Alterado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-left: -20px; /* Ajuste se necessário */
+}
+
+.diaCard img {
+    width: 24px; /* Ajuste o tamanho do ícone de calendário */
+    height: 24px;
+}
+
+.status {
+    padding: 0px 39px 1px 39px; /* Ajuste o padding para ser mais consistente */
+    border-radius: 20px;
+    font-family: 'Noto sans', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    background-color: transparent;
+    display: inline-block; /* Para que o padding funcione corretamente */
+}
+
+.status.aprovado {
+    color: var(--status-aprovado);
+    border: 1px solid var(--status-aprovado);
+}
+
+.status.emanalise { /* Alterado para corresponder ao replace de espaços */
+    color: var(--status-analise);
+    border: 1px solid var(--status-analise);
+}
+
+.status.recusado {
+    color: var(--status-recusado);
+    border: 1px solid var(--status-recusado);
+}
+
+.noRecords {
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+    color: #666;
+}
+
+/* FIM TABELA DE AJUSTES */
+
+/* SECTION ACOMPANHAMENTO */
+
+.tituloH3 { /* Alterado */
+    font-family: 'roboto', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    color: var(--text-color);
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.acompanhamento {
+    display: flex;
+    flex-wrap: wrap; /* Para que os cards quebrem linha */
+    gap: 20px;
+    /* Remove a width: 33.3% para que o flexbox gerencie melhor */
+    /* justify-content: space-between; pode ser ajustado dependendo de como você quer o alinhamento */
+}
+
+.cards {
+    display: flex;
+    align-items: center; /* Alinha verticalmente imagem e info */
+    width: fit-content; /* Ou um width fixo se preferir, ex: 300px */
+    background-color: transparent;
+    border: 2px solid #A19B9B;
+    border-radius: 20px;
+    padding: 10px 23px;
+    box-sizing: border-box; /* Garante que padding e border não aumentem a largura */
+    flex-basis: calc(33.333% - 13.333px); /* Para 3 cards por linha com gap de 20px */
+    min-width: 300px; /* Evita que os cards fiquem muito pequenos em telas menores */
+    justify-content: flex-start;
+}
+
+.comprovante {
+    margin-right: 15px;
+    width: 60px; /* Ajuste o tamanho da imagem de comprovante */
+    height: auto;
+    flex-shrink: 0; /* Evita que a imagem encolha */
+}
+
+.cardsInfo { /* Alterado */
+    display: flex;
+    flex-direction: column;
+}
+
+.cardsInfo h3 {
+    font-family: 'roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 7px;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.cardsInfo .data {
+    font-family: 'inter', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #545970;
+    margin-top: 30px;
+}
+
+.noRecordsFullWidth {
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    font-style: italic;
+    color: #666;
+}
+/* FIM SECTION ACOMPANHAMENTO */
+
+/* Responsividade básica (adicione mais conforme necessário) */
+@media (max-width: 1200px) {
+    .mainContent {
+        padding: 20px 60px;
+    }
+    .sectionSuperior {
+        grid-template-columns: 1fr; /* Coloca as seções uma abaixo da outra */
+        gap: 30px;
+    }
+    .sectionSuperiorDireita h2 {
+        justify-content: flex-start;
+    }
+    .cardsDireita {
+        justify-content: flex-start;
+    }
+    .cards {
+        flex-basis: calc(50% - 10px); /* 2 cards por linha */
+    }
+}
+
+@media (max-width: 768px) {
+    .mainContent {
+        padding: 15px 20px;
+    }
+    .sectionSuperiorEsquerda h2, .sectionSuperiorDireita h2 {
+        font-size: 30px;
+    }
+    .sectionSuperiorEsquerda p {
+        font-size: 18px;
+    }
+    .cardsEsquerda {
+        flex-direction: column; /* Cards de solicitação um abaixo do outro */
+        gap: 15px;
+    }
+    .cardJustificativa, .cardAjuste {
+        width: 100%; /* Ocupa a largura total */
+        height: auto;
+        justify-content: flex-start;
+    }
+    .cardsDireita {
+        flex-wrap: wrap; /* Cards de status quebram linha */
+    }
+    .cardStatus {
+        width: calc(50% - 11px); /* 2 cards de status por linha */
+        height: auto;
+        padding: 10px 0;
+    }
+    .tituloH2, .tituloH3 {
+        font-size: 26px;
+    }
+    .tabela th, .tabela td {
+        font-size: 12px;
+        padding: 8px;
+    }
+    .diaCard {
+        margin-left: 0;
+        justify-content: flex-start;
+    }
+    .status {
+        padding: 0px 20px 1px 20px;
+        font-size: 14px;
+    }
+    .cards {
+        flex-basis: 100%; /* Um card por linha na seção de acompanhamento */
+    }
+}
