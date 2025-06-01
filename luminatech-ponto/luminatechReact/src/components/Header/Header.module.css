@@ -1,5 +1,13 @@
 /* src/components/Header/Header.module.css */
 
+:root {
+  --primary-color: #ebe7e7;
+  --secondary-color: #6b1294;
+  --color-secondary: #cf8ceea9;
+  --secondary-color-hover: #611186;
+}
+
+
 .header {
   display: flex;
   align-items: center;
@@ -93,6 +101,33 @@
   justify-content: center;
   pointer-events: none; /* Não impede cliques no sino por baixo */
 }
+
+
+
+
+
+
+.logoutButton {
+  margin-left: 32px;
+  background: var(--secondary-color);
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 18px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.logoutButton:hover {
+   background: var(--secondary-color-hover);
+  color: var(--corBranca);
+}
+
+
+
+
+
 
 /* Media Queries para o Header */
 @media (max-width: 900px) {

@@ -86,7 +86,10 @@ function PunchClockPage() {
 
             <ModalPonto show={showModal} />
         </div>
+
+        
     );
 }
+
 
 export default PunchClockPage;

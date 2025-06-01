@@ -124,7 +124,7 @@ function RegisterPage() { // Nome do componente consistente com o arquivo
             </form>
             <p id="p-conta" className={`mt-4 ${styles.pConta}`}>
               Já possui uma conta?{' '} {/* Texto para quem já tem conta */}
-              <Link to="/" id="btn-entrar-agora" className={styles.btnCadastrar}> {/* Link para a página de login */}
+              <Link to="/login" id="btn-entrar-agora" className={styles.btnCadastrar}> {/* Link para a página de login */}
                 Faça login
               </Link>
                  <p className={styles.copyright}>© 2025 TODOS OS DIREITOS RESERVADOS</p>

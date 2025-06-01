@@ -27,7 +27,7 @@
 
 .titulo {
     font-family: 'Roboto', sans-serif;
-    font-size: 55px;
+    font-size: 40px;
     font-weight: 600;
     margin-left: 42px;
     margin-bottom: 60px;
@@ -59,6 +59,14 @@
     border-bottom: 1px solid #919191;
     margin-bottom: 37px;
     padding-bottom: 5px; /* Adicionado um pouco de padding para espaçamento */
+    width: 70%; /* Para que a borda ocupe a largura total */
+}
+
+
+form .borda {
+    border-bottom: none;
+    margin-bottom: 24px; /* Espaço menor para inputs */
+    padding-bottom: 0;
 }
 
 .h2 {
@@ -80,17 +88,87 @@
     font-family: 'Noto sans', sans-serif;
     font-size: 16px;
     font-weight: 600;
-    width: 320px;
+    width: 200px;
     height: 50px;
     margin-left: auto; /* Alinha o botão à direita dentro do flex container */
     margin-top: 20px; /* Aumentei um pouco a margem superior */
-    background-color: #B889FBCC;
-    color: var(--secondary-color);
+    background-color: var(--secondary-color) !important;
+    color: var(--corBranca);
     border: none;
     border-radius: 20px;
     cursor: pointer;
     align-self: flex-end; /* Alinha o botão ao final do container pai (.mainContent) */
 }
+
+.botaoEditar:hover {
+    background-color: var(--secondary-color-hover) !important;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 500;
+ color: #474747;
+  margin-bottom: 18px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.h2 {
+  font-size: 1.08rem;
+  color: #6b6b6b;
+  font-weight: 500;
+  margin-bottom: 2px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 0 #f5f5f5;
+}
+
+
+
+
+
+
+
+
+
+.inputEdit {
+  width: 70%;
+  padding: 10px 14px;
+  font-size: 1.1rem;
+  border: 1.5px solid #33333383;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  background: #faf7ff;
+  color: #333;
+  transition: border 0.2s;
+}
+.inputEdit:focus {
+  outline: none;
+  border: 2px solid #333333b4;
+  background: #fff;
+}
+
+
+
+.botaoCancelar {
+  font-family: 'Noto sans', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  width: 200px;
+  height: 50px;
+ background-color: var(--color-secondary) !important;
+  color: var(--text-color) !important;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  align-self: flex-end;
+  transition: background 0.2s;
+}
+.botaoCancelar:hover {
+ background-color: var(--hover-roxo) !important;
+    color: var(--text-color) !important;
+}
+
+
 
 
 @media (min-width: 1441px) {

@@ -2,7 +2,18 @@
 
 /* Variáveis e resets globais já devem estar em App.module.css */
 
+html, body, #root {
+    height: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: var(--primary-color); /* Ou a cor de fundo desejada */
+}
+
 .mainContent { /* Anteriormente 'main' */
+     min-height: 100vh; /* Garante que ocupe toda a altura da tela */
+    box-sizing: border-box;
+    /* ...restante do seu código... */
     max-width: 100%;
     padding: 3.125rem 3.3125rem 0 3.3125rem; /* 50px 53px 0 53px */
     flex-grow: 1; /* Permite que o conteúdo ocupe o espaço restante abaixo do header */

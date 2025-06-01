@@ -69,6 +69,15 @@ function Header({ userData }) {
                         </svg>
                     </span>
                 </span>
+                 <button
+                    className={styles.logoutButton}
+                    onClick={() => {
+                        localStorage.removeItem('token');
+                        window.location.href = '/login'; // Redireciona para a página de login
+                    }}
+                >
+                    Sair
+                </button>
             </div>
         </div>
     );

@@ -92,7 +92,7 @@ function ForgotPasswordPage() {
                 Recuperar
               </button>
               {/* Botão Voltar - usando styles.btnReturn */}
-              <Link to="/" id="btn-return" className={`btn w-100 mb-3 ${styles.btnReturn}`}>
+              <Link to="/login" id="btn-return" className={`btn w-100 mb-3 ${styles.btnReturn}`}>
                 Voltar
               </Link>
 
