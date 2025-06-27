@@ -1,0 +1,191 @@
+/* src/pages/PersonalDataPage/PersonalDataPage.module.css */
+
+/* Definição de variáveis de cor (se não estiverem em um arquivo global) */
+:root {
+    --primary-color: #EBE7E7;
+    --secondary-color: #6B1294;
+    --color-secondary: #cf8ceea9;
+    --secondary-color-hover: #611186;
+    --text-color: #0F0F0F;
+    --stroker: #6b6b6b;
+    --hover-roxo: #e09eff96;
+    --corBranca: #FFFFFF;
+}
+
+.mainContent {
+ 
+    background-color: var(--primary-color); /* Aplica a cor de fundo aqui */
+    padding: 60px 20px 20px 90px;
+    min-height: 100vh; /* Ajuste a altura total menos a altura do Header */
+    display: flex; /* Adicione display flex */
+    flex-direction: column; /* Para organizar o conteúdo em coluna */
+    justify-content: flex-start; /* Alinha o conteúdo ao topo */
+    align-items: flex-start; /* Alinha o conteúdo à esquerda */
+}
+
+/* Os estilos do header e navegação não são necessários aqui, pois o Header é um componente separado */
+
+.titulo {
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    margin-left: 42px;
+    margin-bottom: 60px;
+    color: var(--text-color);
+    width: 100%; /* Para garantir que o título ocupe a largura total */
+}
+
+.perfil {
+    display: grid;
+    grid-template-columns: 480px 1fr;
+    align-items: start;
+    gap: 60px;
+    width: 100%; /* Para que o grid ocupe a largura total disponível */
+}
+
+.imagemPerfil { /* Alterado de .imagem-perfil para .imagemPerfil */
+    border-radius: 15px;
+    max-width: 100%; /* Para que a imagem seja responsiva */
+    height: auto;
+}
+
+.descricao {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Para que a descrição ocupe a largura total disponível */
+}
+
+.borda {
+    border-bottom: 1px solid #919191;
+    margin-bottom: 37px;
+    padding-bottom: 5px; /* Adicionado um pouco de padding para espaçamento */
+    width: 70%; /* Para que a borda ocupe a largura total */
+}
+
+
+form .borda {
+    border-bottom: none;
+    margin-bottom: 24px; /* Espaço menor para inputs */
+    padding-bottom: 0;
+}
+
+.h2 {
+    font-family: 'Sora', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #1E1E1E;
+}
+
+.h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #1E1E1E;
+    margin-bottom: 27px;
+}
+
+.botaoEditar { /* Alterado de .botao-editar para .botaoEditar */
+    font-family: 'Noto sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    width: 200px;
+    height: 50px;
+    margin-left: auto; /* Alinha o botão à direita dentro do flex container */
+    margin-top: 20px; /* Aumentei um pouco a margem superior */
+    background-color: var(--secondary-color) !important;
+    color: var(--corBranca);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    align-self: flex-end; /* Alinha o botão ao final do container pai (.mainContent) */
+}
+
+.botaoEditar:hover {
+    background-color: var(--secondary-color-hover) !important;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 500;
+ color: #474747;
+  margin-bottom: 18px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.h2 {
+  font-size: 1.08rem;
+  color: #6b6b6b;
+  font-weight: 500;
+  margin-bottom: 2px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 0 #f5f5f5;
+}
+
+
+
+
+
+
+
+
+
+.inputEdit {
+  width: 70%;
+  padding: 10px 14px;
+  font-size: 1.1rem;
+  border: 1.5px solid #33333383;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  background: #faf7ff;
+  color: #333;
+  transition: border 0.2s;
+}
+.inputEdit:focus {
+  outline: none;
+  border: 2px solid #333333b4;
+  background: #fff;
+}
+
+
+
+.botaoCancelar {
+  font-family: 'Noto sans', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  width: 200px;
+  height: 50px;
+ background-color: var(--color-secondary) !important;
+  color: var(--text-color) !important;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  align-self: flex-end;
+  transition: background 0.2s;
+}
+.botaoCancelar:hover {
+ background-color: var(--hover-roxo) !important;
+    color: var(--text-color) !important;
+}
+
+
+
+
+@media (min-width: 1441px) {
+    .mainContent {
+        padding-top: 40px;
+    }
+
+    .titulo {
+        margin-bottom: 40px;
+    }
+}
+
+/* Adaptações para garantir que o body não está adicionando padding extra */
+body {
+    max-width: none; /* Removendo max-width do body se o App.jsx já gerencia o container */
+    margin: 0; /* Certifica-se que não há margin no body */
+}
+
+/* Remova ou ajuste estilos de 'header' e '.usuario' se estiverem no CSS global */
+/* O Header é um componente separado, então os estilos de .usuario e .nav-buttons devem estar em Header.module.css */
